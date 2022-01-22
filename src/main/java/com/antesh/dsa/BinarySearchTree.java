@@ -109,8 +109,8 @@ public class BinarySearchTree {
 
     public void postorder(Node node) {
         if (node != null) {
-            postorder(node.right);
             postorder(node.left);
+            postorder(node.right);
             node.display();
 
         }
