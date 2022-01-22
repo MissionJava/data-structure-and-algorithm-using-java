@@ -30,6 +30,7 @@ public class BinarySearchTree {
 
         System.out.print(bst.search(40) ? "\n40 found in BST" : "\n40 not found in BST");
         System.out.print(bst.search(90) ? "\n90 found in BST" : "\n90 not found in BST");
+        System.out.println("\nLargest node in BST: " + bst.findLargestNodeInBST(bst.root));
     }
 
     public void insert(int data) {
@@ -65,6 +66,29 @@ public class BinarySearchTree {
         }
 
         return true;
+    }
+
+    public int findLargestNodeInBST(Node node) {
+        if (node == null) {
+            System.out.println("Tree is empty");
+            return 0;
+        }
+
+        int leftMax;
+        int rightMax;
+        int max = node.data;
+
+        if (node.left != null) {
+            leftMax = findLargestNodeInBST(node.left);
+            max = Math.max(max, leftMax);
+        }
+
+        if (node.right != null) {
+            rightMax = findLargestNodeInBST(node.right);
+            max = Math.max(max, rightMax);
+        }
+
+        return max;
     }
 
     public void inorder(Node node) {
