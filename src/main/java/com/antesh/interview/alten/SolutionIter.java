@@ -1,4 +1,4 @@
-package com.antesh.alten.codility;
+package com.antesh.interview.alten;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

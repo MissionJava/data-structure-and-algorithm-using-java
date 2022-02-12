@@ -1,4 +1,4 @@
-package com.antesh.agoda;
+package com.antesh.interview.agoda;
 
 /*
 *   Suppose we
