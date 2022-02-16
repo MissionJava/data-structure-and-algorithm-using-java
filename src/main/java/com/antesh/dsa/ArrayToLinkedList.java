@@ -48,8 +48,6 @@ public class ArrayToLinkedList {
         if (root == null) {
             root = temp;
         } else {
-
-
             Node ptr = root;
             while (ptr.next != null) {
                 ptr = ptr.next;
