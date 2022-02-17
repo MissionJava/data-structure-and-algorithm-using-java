@@ -1,12 +1,18 @@
 package com.antesh.interview.nvidia;
 
-/*
- * Goal is to find the loop in LinkedList without extra space
- * */
-
 public class FindLoopInLinkedList {
 
     public static Node root;
+    public static int size = 0;
+
+
+    static class Node {
+        int data;
+        Node next;
+
+        public Node() {
+        }
+    }
 
     public static Node insertNode(Node root, int data) {
         Node temp = new Node();
@@ -22,44 +28,34 @@ public class FindLoopInLinkedList {
             }
             ptr.next = temp;
         }
+        size++;
         return root;
     }
 
     public static boolean detectLoop() {
-        Node p_slow = root;
-        Node p_fast = root;
-
-        while (p_slow != null && p_fast != null && p_fast.next != null) {
-            p_slow = p_slow.next;
-            p_fast = p_fast.next.next;
-            if (p_fast == p_slow) {
+        int count = 0;
+        while (root != null) {
+            if (root.next == null) {
+                return false;
+            }
+            if (count > size) {
                 return true;
             }
+            root = root.next;
+            count++;
         }
         return false;
     }
 
-    public static void print(Node root) {
-        while (root != null) {
-            System.out.print(root.data + " -> ");
-            root = root.next;
-        }
-        System.out.println();
-    }
-
-    //driver
     public static void main(String[] args) {
         int[] arr = new int[]{5, 25, 10, 35, 40};
         for (int num : arr) {
             root = insertNode(root, num);
         }
 
-        print(root);
+        root.next.next.next.next.next = root.next.next;
+
         System.out.println("Is Loop present in LinkedList? \nAns: " + detectLoop());
     }
 
-    static class Node {
-        int data;
-        Node next;
-    }
 }
