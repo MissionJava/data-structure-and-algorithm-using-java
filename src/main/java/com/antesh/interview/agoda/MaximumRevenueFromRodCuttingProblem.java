@@ -48,7 +48,6 @@ public class MaximumRevenueFromRodCuttingProblem {
         System.out.println(solution(4, new int[]{2, 4, 7, 7}));
         System.out.println(solution(8, new int[]{1, 5, 8, 9, 10, 17, 17, 20}));
         System.out.println(solution(8, new int[]{3, 5, 8, 9, 10, 17, 17, 20}));
-
     }
 
     private static int solution(int rod_size, int[] prices) {
