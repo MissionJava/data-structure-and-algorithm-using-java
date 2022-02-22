@@ -24,10 +24,15 @@ public class LCSOfTwoStringProblem {
     //Using recursion: TC: O(2^N)
     public static int lcsRecursion( char[] X, char[] Y, int m, int n )
     {
+        //base case 1 -if empty string
         if (m == 0 || n == 0)
             return 0;
+
+        //if last char of both string matched then 1 + lcs(x,y, m-1, n-1)
         if (X[m-1] == Y[n-1])
             return 1 + lcsRecursion(X, Y, m-1, n-1);
+
+        //else max(lcs(x,y, m-1, n), lcs(x,y, m, n-1)
         else
             return max(lcsRecursion(X, Y, m, n-1), lcsRecursion(X, Y, m-1, n));
     }
