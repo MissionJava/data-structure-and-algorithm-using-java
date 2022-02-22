@@ -22,5 +22,7 @@ This repository includes data structure and algorithm solutions, and solutions o
        previous state for that purpose we need a stack.
    
    ####Implementation of Stack
-   - [Using Arrays]()
-   - Using Linked list
+   - [Using Arrays](https://github.com/MissionJava/data-structure-and-algorithm-using-java/blob/main/src/main/java/com/antesh/dsa/stack/StackUsingArray.java)
+   - [Using Linked list](https://github.com/MissionJava/data-structure-and-algorithm-using-java/blob/main/src/main/java/com/antesh/dsa/stack/StackUsingLinkedList.java)
+     - Pros: The linked list implementation of a stack can grow and shrink according to the needs at runtime. 
+     - Cons: Requires extra memory due to involvement of pointers.
