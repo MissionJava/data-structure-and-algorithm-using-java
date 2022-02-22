@@ -2,13 +2,13 @@
 
 This repository includes data structure and algorithm solutions, and solutions of the live coding interview questions asked at different companies over a video call.
 
-##Data Structure
+## Data Structure
 
-### Stack
- - linear data structure which follows LIFO or FILO
- - push(), pop(), peek(), isEmpty() all take O(1) and no looping required
+### 1. Stack
+    - linear data structure which follows LIFO or FILO
+    - push(), pop(), peek(), isEmpty() all take O(1) and no looping required
     
-   ####Application of Stack
+    #### Application of Stack
      - String reversal
      - Tower of Hanoi
      - Infix to Postfix/Prefix conversion
@@ -21,8 +21,8 @@ This repository includes data structure and algorithm solutions, and solutions o
        the previous state and go into some another path. To get back from a current state we need to store the 
        previous state for that purpose we need a stack.
    
-   ####Implementation of Stack
-   - [Using Arrays](https://github.com/MissionJava/data-structure-and-algorithm-using-java/blob/main/src/main/java/com/antesh/dsa/stack/StackUsingArray.java)
-   - [Using Linked list](https://github.com/MissionJava/data-structure-and-algorithm-using-java/blob/main/src/main/java/com/antesh/dsa/stack/StackUsingLinkedList.java)
-     - Pros: The linked list implementation of a stack can grow and shrink according to the needs at runtime. 
-     - Cons: Requires extra memory due to involvement of pointers.
+    #### Implementation of Stack
+    - [Using Arrays](https://github.com/MissionJava/data-structure-and-algorithm-using-java/blob/main/src/main/java/com/antesh/dsa/stack/StackUsingArray.java)
+    - [Using Linked list](https://github.com/MissionJava/data-structure-and-algorithm-using-java/blob/main/src/main/java/com/antesh/dsa/stack/StackUsingLinkedList.java)
+      - Pros: The linked list implementation of a stack can grow and shrink according to the needs at runtime. 
+      - Cons: Requires extra memory due to involvement of pointers.
