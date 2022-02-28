@@ -20,6 +20,9 @@ public class DuplicateZeros {
 
         System.out.println(Arrays.toString(duplicateZerosOptimizedSC(new int[]{1, 0, 2, 3, 0, 4, 5, 0})));
         System.out.println(Arrays.toString(duplicateZerosOptimizedTC(new int[]{1, 0, 2, 3, 0, 4, 5, 0})));
+        System.out.println(Arrays.toString(duplicateZerosOptimizedTCOn(new int[]{1, 0, 2, 3, 0, 4, 5, 0})));
+
+    }
     }
 
     //TC: O(n) but SC: O(n)
@@ -64,5 +67,44 @@ public class DuplicateZeros {
         for (int end = arr.length - 1; end > start; end--) {
             arr[end] = arr[end - 1];
         }
+    }
+    
+    //TC: O(n*n) but SC: O(1)
+    private static int[] duplicateZerosOptimizedTCOn(int[] arr) {
+
+        if (arr == null || arr.length == 0) {
+            return new int[]{};
+        }
+        
+int startShift = arr.length -1;
+        for (int start = 0; start < arr.length; start++) {
+            if (arr[start] == 0 && start < startShift) {
+               // shiftToRight(arr, start);
+               // start++;
+                startShift--; 
+            }
+        }
+        
+        for (int end = arr.length-1; end >= 0; end++) {
+
+            if (arr[startShift ] != 0) {
+                arr[end] = arr[startShift];
+               // shiftToRight(arr, start);
+
+               // start++;
+
+                startShift--; 
+
+            } else {
+                arr[end] = arr[startShift];
+      
+                arr[end -1] = arr[startShift];
+                starShift--;
+                end -= 2;
+                }
+
+        }
+
+        return arr;
     }
 }
