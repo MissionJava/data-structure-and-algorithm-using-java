@@ -26,6 +26,12 @@ public class MergeTwoSortedArraysAndFindMedianProblem {
 
         System.out.println("Median is " + mergeTwoSortedArrayAndFindMedian(arr3, 0, arr4, 0));
 
+        int[] arr5 = {1, 12, 15, 26};
+        int[] arr6 = {2, 12, 17, 30, 45};
+
+        System.out.println("Median is " + mergeTwoSortedArrayAndFindMedian(arr5, 0, arr6, 0));
+
+
         //If we already have sorted array and need to find median
         System.out.println(findMedian(new int[]{1, 2, 12, 13, 15, 24, 26, 38}));
     }
