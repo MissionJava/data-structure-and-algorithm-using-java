@@ -23,7 +23,6 @@ public class DuplicateZeros {
         System.out.println(Arrays.toString(duplicateZerosOptimizedTCOn(new int[]{1, 0, 2, 3, 0, 4, 5, 0})));
 
     }
-    }
 
     //TC: O(n) but SC: O(n)
     private static int[] duplicateZerosOptimizedTC(int[] arr) {
@@ -68,43 +67,40 @@ public class DuplicateZeros {
             arr[end] = arr[end - 1];
         }
     }
-    
+
     //TC: O(n*n) but SC: O(1)
     private static int[] duplicateZerosOptimizedTCOn(int[] arr) {
-
         if (arr == null || arr.length == 0) {
             return new int[]{};
         }
-        
-int startShift = arr.length -1;
-        for (int start = 0; start < arr.length; start++) {
-            if (arr[start] == 0 && start < startShift) {
-               // shiftToRight(arr, start);
-               // start++;
-                startShift--; 
-            }
-        }
-        
-        for (int end = arr.length-1; end >= 0; end++) {
 
-            if (arr[startShift ] != 0) {
-                arr[end] = arr[startShift];
-               // shiftToRight(arr, start);
-
-               // start++;
-
-                startShift--; 
-
-            } else {
-                arr[end] = arr[startShift];
-      
-                arr[end -1] = arr[startShift];
-                starShift--;
-                end -= 2;
-                }
-
-        }
+        int startShiftingIndex = getStartShiftingIndex(arr);
+        shiftElementsToRight(arr, startShiftingIndex);
 
         return arr;
+    }
+
+    private static void shiftElementsToRight(int[] arr, int startShiftingIndex) {
+        for (int end = arr.length - 1; end >= 0; end--) {
+            if (arr[startShiftingIndex] != 0) {
+                arr[end] = arr[startShiftingIndex];
+                startShiftingIndex--;
+            } else {
+                arr[end] = arr[startShiftingIndex];
+                arr[end - 1] = arr[startShiftingIndex];
+                startShiftingIndex--;
+                end--;
+            }
+        }
+    }
+
+    private static int getStartShiftingIndex(int[] arr) {
+        int startShiftingIndex = arr.length - 1;
+        for (int start = 0; start < arr.length; start++) {
+            if (arr[start] == 0 && start < startShiftingIndex) {
+                startShiftingIndex--;
+            }
+        }
+        return startShiftingIndex;
     }
 }
