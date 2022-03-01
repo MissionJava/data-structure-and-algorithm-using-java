@@ -23,17 +23,25 @@ public class MergeTwoSortedArraysAndFindMedianProblem {
 
         int[] arr3 = {1, 12, 15, 26};
         int[] arr4 = {2, 13, 17, 30, 45};
-        
+
         System.out.println("Median is " + mergeTwoSortedArrayAndFindMedian(arr3, 0, arr4, 0));
 
         //If we already have sorted array and need to find median
         System.out.println(findMedian(new int[]{1, 2, 12, 13, 15, 24, 26, 38}));
     }
 
-    //TC: O(m+n)
+    //TC: O(m+n) & SC: O(m+n)
     private static float mergeTwoSortedArrayAndFindMedian(int[] arr1, int m, int[] arr2, int n) {
         int[] sortedArrResult = new int[arr1.length + arr2.length];
 
+        mergeTwoSortedArray(arr1, m, arr2, n, sortedArrResult);
+
+        System.out.println(Arrays.toString(sortedArrResult));
+
+        return findMedian(sortedArrResult);
+    }
+
+    private static void mergeTwoSortedArray(int[] arr1, int m, int[] arr2, int n, int[] sortedArrResult) {
         int start = 0;
         while (m < arr1.length) {
             if (arr1[m] < arr2[n]) {
@@ -48,10 +56,6 @@ public class MergeTwoSortedArraysAndFindMedianProblem {
         while (n < arr2.length) {
             sortedArrResult[start++] = arr2[n++];
         }
-
-        System.out.println(Arrays.toString(sortedArrResult));
-
-        return findMedian(sortedArrResult);
     }
 
     private static float findMedian(int[] sortedArr) {
