@@ -36,7 +36,7 @@ public class CoinChangeWithMinimumCoinsProblemDP {
             }
         }
 
-        //minimum coins required will be at the mast row and column
+        //minimum coins required will be at the last row and column
         return memo[coins.length][amount];
     }
 }

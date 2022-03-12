@@ -6,6 +6,7 @@ public class SumOfDigits {
         int number = 1234;
         System.out.println("sum of digits of " + number + " is " + sumOfDigits(number));
         System.out.println("sum of digits of " + number + " is " + sumInOofOneTime(number));
+        System.out.println("sum of digits of " + number + " is " + sumInOofOneTime(88));
     }
 
     //O(n)
