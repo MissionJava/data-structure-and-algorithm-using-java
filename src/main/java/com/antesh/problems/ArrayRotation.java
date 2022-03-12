@@ -20,14 +20,17 @@ public class ArrayRotation {
         int n = arr.length;
         int j = 0;
         while (j < d) {
-            int temp = arr[n - 1];
-            for (int i = 0; i < n; i++) {
-                int current = arr[i];
-                arr[i] = temp;
-                temp = current;
-
-            }
+            rotateByOnePosition(arr, n);
             j++;
+        }
+    }
+
+    private static void rotateByOnePosition(int[] arr, int n) {
+        int temp = arr[n - 1];
+        for (int i = 0; i < n; i++) {
+            int current = arr[i];
+            arr[i] = temp;
+            temp = current;
         }
     }
 
