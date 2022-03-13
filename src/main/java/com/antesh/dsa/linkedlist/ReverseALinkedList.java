@@ -1,4 +1,4 @@
-package com.antesh.dsa;
+package com.antesh.dsa.linkedlist;
 
 /*  Given a linked list, output it's reverse
 

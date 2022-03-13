@@ -1,4 +1,4 @@
-package com.antesh.dsa;
+package com.antesh.dsa.linkedlist;
 
 /*
 * time complexity for insert operation is O(n)
