@@ -1,8 +1,6 @@
 package com.antesh.dsa.linkedlist;
 
 
-import java.util.List;
-
 /**
  * Problem Reference: https://github.com/aniketskulkarni/coding-problems/blob/master/LeetCode/src/com/java7/problem/easy/linkedlist/OddEvenLinkedList.java
  *
@@ -64,17 +62,28 @@ public class OddEvenLinkedList {
             return head;
         }
 
-        ListNode currentNode = head;        //1 -> 2 -> 3 -> 4 -> 5
+        int size = getSize(head);
 
-        int size = 0;
-        while (currentNode != null) {
-            size++;
-            currentNode = currentNode.next;
-        }
-
-        currentNode = head;
+        ListNode currentNode = head;
         int counter = size / 2;
 
+        oddEvenIndicesGrouping(currentNode, counter);
+
+        return head;
+    }
+
+    private int getSize(ListNode head) {
+        ListNode temp = head;
+
+        int size = 0;
+        while (temp != null) {
+            size++;
+            temp = temp.next;
+        }
+        return size;
+    }
+
+    private void oddEvenIndicesGrouping(ListNode currentNode, int counter) {
         while (currentNode.next != null && currentNode.next.next != null && counter > 0) {
             int data = currentNode.next.data;
             currentNode.next = currentNode.next.next;
@@ -82,8 +91,6 @@ public class OddEvenLinkedList {
             currentNode = currentNode.next;
             counter--;
         }
-
-        return head;
     }
 
     public static void main(String[] args) {
