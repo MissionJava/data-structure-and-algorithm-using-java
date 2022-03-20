@@ -21,7 +21,7 @@ import java.util.List;
  */
 
 public class OddEvenLinkedList {
-    ListNode head;
+    public ListNode head;
 
     class ListNode {
         int data;
@@ -30,6 +30,18 @@ public class OddEvenLinkedList {
         public ListNode(int data) {
             this.data = data;
             this.next = null;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            ListNode temp = head;
+            while (temp!= null) {
+                sb.append(temp.data).append(" --> ");
+                temp = temp.next;
+            }
+
+            return sb.toString();
         }
     }
 
@@ -47,22 +59,58 @@ public class OddEvenLinkedList {
         currentNode.next = newNode;
     }
 
-    public static ListNode oddEvenLinkedList(ListNode head) {
+    public ListNode oddEvenLinkedList(ListNode head) {
         if (head == null) {
             return head;
         }
 
         ListNode currentNode = head;        //1 -> 2 -> 3 -> 4 -> 5
 
-        while (currentNode.next != null && currentNode.next.next != null) {
-            ListNode nextNode = currentNode.next;       // 2 -> 3
-            ListNode nextToNextNode = currentNode.next.next;    // 3 -> 4
-            currentNode.next = currentNode.next.next;   //1 -> 3 -> 4
-            //TODO:
-
-
-
+        int size = 0;
+        while (currentNode != null) {
+            size++;
+            currentNode = currentNode.next;
         }
+
+        currentNode = head;
+        int counter = size / 2;
+
+        while (currentNode.next != null && currentNode.next.next != null && counter > 0) {
+            int data = currentNode.next.data;
+            currentNode.next = currentNode.next.next;
+            addAtTail(data);
+            currentNode = currentNode.next;
+            counter--;
+        }
+
+        return head;
+    }
+
+    public static void main(String[] args) {
+        //Odd length
+        OddEvenLinkedList oddEvenLinkedList = new OddEvenLinkedList();
+        oddEvenLinkedList.addAtTail(1);
+        oddEvenLinkedList.addAtTail(2);
+        oddEvenLinkedList.addAtTail(3);
+        oddEvenLinkedList.addAtTail(4);
+        oddEvenLinkedList.addAtTail(5);
+
+
+        System.out.println("Original odd length linked list: " + oddEvenLinkedList.head);
+        System.out.println("linked list after odd even position shuffling: " +oddEvenLinkedList.oddEvenLinkedList(oddEvenLinkedList.head));
+        System.out.println();
+
+        //Even length
+        oddEvenLinkedList = new OddEvenLinkedList();
+        oddEvenLinkedList.addAtTail(1);
+        oddEvenLinkedList.addAtTail(2);
+        oddEvenLinkedList.addAtTail(3);
+        oddEvenLinkedList.addAtTail(4);
+        oddEvenLinkedList.addAtTail(5);
+        oddEvenLinkedList.addAtTail(6);
+
+        System.out.println("Original even length linked list: " + oddEvenLinkedList.head);
+        System.out.println("linked list after odd even position shuffling: " +oddEvenLinkedList.oddEvenLinkedList(oddEvenLinkedList.head));
 
 
     }
