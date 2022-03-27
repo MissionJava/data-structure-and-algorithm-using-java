@@ -89,6 +89,12 @@ public class MergeTwoSortedList {
     public static void main(String[] args) {
         MergeTwoSortedList list = new MergeTwoSortedList();
 
+        test1(list);
+        System.out.println();
+        test2(list);
+    }
+
+    private static void test1(MergeTwoSortedList list) {
         Node sortedList1 = null;
         for (int i = 1; i < 4; i++) {
             sortedList1 = list.addToTail(sortedList1, i);
@@ -102,6 +108,21 @@ public class MergeTwoSortedList {
         System.out.println("sortedList1 : " + list.print(sortedList1));
         System.out.println("sortedList2 : " + list.print(sortedList2));
         System.out.println("merged list : " + list.print(list.mergeTwoSortedList(sortedList1, sortedList2)));
+    }
 
+    private static void test2(MergeTwoSortedList list) {
+        Node sortedList1 = null;
+        sortedList1 = list.addToTail(sortedList1, 1);
+        sortedList1 = list.addToTail(sortedList1, 2);
+        sortedList1 = list.addToTail(sortedList1, 4);
+
+        Node sortedList2 = null;
+        sortedList2 = list.addToTail(sortedList2, 1);
+        sortedList2 = list.addToTail(sortedList2, 3);
+        sortedList2 = list.addToTail(sortedList2, 4);
+
+        System.out.println("sortedList1 : " + list.print(sortedList1));
+        System.out.println("sortedList2 : " + list.print(sortedList2));
+        System.out.println("merged list : " + list.print(list.mergeTwoSortedList(sortedList1, sortedList2)));
     }
 }
