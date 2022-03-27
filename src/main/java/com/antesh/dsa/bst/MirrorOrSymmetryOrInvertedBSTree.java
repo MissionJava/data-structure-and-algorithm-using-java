@@ -1,4 +1,4 @@
-package com.antesh;
+package com.antesh.dsa.bst;
 
 /*  Mirror of a Tree: Mirror of a Binary Tree T is another Binary Tree M(T) with left and right children of all non-leaf nodes interchanged.
 *   (1)  Call Mirror for left-subtree    i.e., Mirror(left-subtree)
