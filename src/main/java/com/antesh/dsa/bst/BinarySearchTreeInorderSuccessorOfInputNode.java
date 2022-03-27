@@ -1,4 +1,4 @@
-package com.antesh.dsa;
+package com.antesh.dsa.bst;
 
 public class BinarySearchTreeInorderSuccessorOfInputNode {
 

@@ -1,4 +1,4 @@
-package com.antesh.dsa;
+package com.antesh.dsa.bst;
 
 
 /*Given a sorted array, create a balanced BST and not skewed bst

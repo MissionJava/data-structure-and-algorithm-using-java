@@ -1,4 +1,4 @@
-package com.antesh.dsa;
+package com.antesh.dsa.bst;
 
 /*
  * https://www.javatpoint.com/binary-tree
