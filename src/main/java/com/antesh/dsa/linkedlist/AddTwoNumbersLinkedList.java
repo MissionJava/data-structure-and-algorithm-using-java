@@ -36,8 +36,10 @@ public class AddTwoNumbersLinkedList {
 
     public String print(Node n) {
         StringBuilder sb = new StringBuilder();
-        while (n1 != null) {
-            sb.append(n1.data).append(" --> ");
+        Node ptr = n;
+        while (ptr != null) {
+            sb.append(ptr.data).append(" --> ");
+            ptr = ptr.next;
         }
         return sb.toString();
     }
@@ -104,6 +106,9 @@ public class AddTwoNumbersLinkedList {
             list.n2 = list.addToTail(list.n2, i);
         }
 
-        list.addTwoNumbers(list.n1, list.n2);
+        System.out.println("n1: " + list.print(list.n1));
+        System.out.println("n2: " + list.print(list.n2));
+        list.result = list.addTwoNumbers(list.n1, list.n2);
+        System.out.println("sum: " + list.print(list.result));
     }
 }
