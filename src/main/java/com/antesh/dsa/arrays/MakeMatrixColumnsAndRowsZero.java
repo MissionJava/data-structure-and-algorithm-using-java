@@ -1,4 +1,4 @@
-package com.antesh.dsa;
+package com.antesh.dsa.arrays;
 
 /* Antesh Sharma created on 2/3/2022
     TC = O(M x N)
