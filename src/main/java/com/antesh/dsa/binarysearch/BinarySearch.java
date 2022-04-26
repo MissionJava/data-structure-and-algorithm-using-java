@@ -35,7 +35,7 @@ public class BinarySearch {
             int mid = low + (high -  low)/2;
 
             if (target == sortedArr[mid]) {
-                return sortedArr[mid];
+                return mid;
             } else if (target < sortedArr[mid]) {
                 return binarySearch(sortedArr, low, mid-1, target);
             }
