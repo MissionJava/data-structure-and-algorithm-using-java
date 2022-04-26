@@ -19,6 +19,9 @@ public class BinarySearch {
     public static void main(String[] args) {
         int[] sortedArr = {10, 20, 30, 40, 50};
 
+        System.out.println(binarySearch(sortedArr,0, sortedArr.length-1, 10));
+        System.out.println(binarySearch(sortedArr,0, sortedArr.length-1, 30));
+        System.out.println(binarySearch(sortedArr,0, sortedArr.length-1, 40));
         System.out.println(binarySearch(sortedArr,0, sortedArr.length-1, 50));
         System.out.println(binarySearch(sortedArr,0, sortedArr.length-1, 60));
     }
