@@ -23,3 +23,7 @@ There are two kinds of heaps: **Max Heap** and **Min Heap**
 **Min Heap:** Each node in the Heap has a value no larger than its child nodes. Therefore, the top element (root node) has the smallest value in the Heap.
 
 [![https://github.com/MissionJava/data-structure-and-algorithm-using-java/blob/main/src/main/java/com/antesh/dsa/heap/min-and-max-heap-diagram.jpg]](https://github.com/MissionJava/data-structure-and-algorithm-using-java/blob/main/src/main/java/com/antesh/dsa/heap/min-and-max-heap-diagram.jpg)
+<p align="center">
+  <img src="min-and-max-heap-diagram.jpg">
+  <br/>
+</p>
