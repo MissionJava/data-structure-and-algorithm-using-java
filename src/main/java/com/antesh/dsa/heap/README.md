@@ -22,7 +22,7 @@ There are two kinds of heaps: **Max Heap** and **Min Heap**
 
 **Min Heap:** Each node in the Heap has a value no larger than its child nodes. Therefore, the top element (root node) has the smallest value in the Heap.
 <p align="center">
-  <img src="min-and-max-heap-diagram.jpg">
+  <img src="images/min-and-max-heap-diagram.jpg">
   <br/>
 </p>
 
@@ -30,33 +30,33 @@ There are two kinds of heaps: **Max Heap** and **Min Heap**
 Consider we have an array with elements 10, 8, 5, 15, 6 in it. To build a max-heap using the given elements, Follow the under-given steps –
 - Add the first element, 10 in the tree. It is the root element in the tree.
   <p align="center">
-    <img src="max-heap-insertion-step-1.jpg">
+    <img src="images/max-heap-insertion-step-1.jpg">
     <br/>
   </p>
 - Add the next element in the tree. Compare it with the parent element. If it is greater than its parent element, swap their positions. It is done to ensure that the tree follows heap conditions, and a max-heap is maintained each time an element is added. Here, we should add the second element, 8 as the left child of the root element because a heap is filled from left to right. No swapping occurs here because 10 is greater than 8.
   <p align="center">
-    <img src="max-heap-insertion-step-2.jpg">
+    <img src="images/max-heap-insertion-step-2.jpg">
     <br/>
   </p>
 - Repeat the above-given step with the next element, 5.
   <p align="center">
-    <img src="max-heap-insertion-step-3.jpg">
+    <img src="images/max-heap-insertion-step-3.jpg">
     <br/>
   </p>
 - Add the next element, 15 in the tree. 
   <p align="center">
-    <img src="max-heap-insertion-step-4.jpg">
+    <img src="images/max-heap-insertion-step-4.jpg">
     <br/>
   </p>
   Now since 15 is greater than its parent element 8, this tree is not a max-heap anymore. To make it a heap again, we will swap the positions of 8 and 15.
   <p align="center">
-    <img src="max-heap-insertion-step-4a.jpg">
+    <img src="images/max-heap-insertion-step-4a.jpg">
     <br/>
   </p>
   
   Again the obtained tree is not a max-heap since 15 is greater than its parent element, 10. We will again swap the positions of 10 & 15. 
   <p align="center">
-    <img src="max-heap-insertion-step-4b.jpg">
+    <img src="images/max-heap-insertion-step-4b.jpg">
     <br/>
   </p>
   
@@ -65,7 +65,7 @@ Consider we have an array with elements 10, 8, 5, 15, 6 in it. To build a max-he
   Notice that 15 was first added at the bottom of the tree and then moved up to its correct position. This moving up of elements is known as **bubbling up**.
 - Add the last element, 6 in the heap by comparing it with the parent.
   <p align="center">
-    <img src="max-heap-insertion-step-5.jpg">
+    <img src="images/max-heap-insertion-step-5.jpg">
     <br/>
   </p>
   With this, we have added all the elements of the given array into a heap.
@@ -85,7 +85,7 @@ Recall the list/array that had the elements – 10, 8, 5, 15, 6 in it. To heapif
   
   Treat the elements of the given array as the nodes of a tree. To visualize an array as a binary tree, refer to the part where we have discussed the array representation of the binary tree.
   <p align="center">
-    <img src="max-heapify-step-1.jpg">
+    <img src="images/max-heapify-step-1.jpg">
     <br/>
   </p>
   
@@ -96,7 +96,7 @@ Recall the list/array that had the elements – 10, 8, 5, 15, 6 in it. To heapif
   Here, we start comparing 8 with 15 and 6. Now, since 15 is greater than 8, we will swap their positions.
 
   <p align="center">
-    <img src="max-heapify-step-2.jpg">
+    <img src="images/max-heapify-step-2.jpg">
     <br/>
   </p>
   
@@ -105,7 +105,7 @@ Recall the list/array that had the elements – 10, 8, 5, 15, 6 in it. To heapif
   Now that we have obtained a max-heap, we can stop this step.
 
   <p align="center">
-    <img src="max-heapify-step-3.jpg">
+    <img src="images/max-heapify-step-3.jpg">
     <br/>
   </p>
   
