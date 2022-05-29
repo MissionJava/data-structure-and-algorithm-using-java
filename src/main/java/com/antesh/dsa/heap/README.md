@@ -63,57 +63,56 @@ Consider we have an array with elements 10, 8, 5, 15, 6 in it. To build a max-he
   This step is performed using recursion, and done until the inserted element finds its correct position in the heap.
 
   Notice that 15 was first added at the bottom of the tree and then moved up to its correct position. This moving up of elements is known as **bubbling up**.
-  - Add the last element, 6 in the heap by comparing it with the parent.
-    <p align="center">
-      <img src="max-heap-insertion-step-5.jpg">
-      <br/>
-    </p>
-    With this, we have added all the elements of the given array into a heap.
+- Add the last element, 6 in the heap by comparing it with the parent.
+  <p align="center">
+    <img src="max-heap-insertion-step-5.jpg">
+    <br/>
+  </p>
+  With this, we have added all the elements of the given array into a heap.
 
-    One thing to note here is that a comparison is done each time an element is added. The number of comparisons also depends on the height of the tree. In the above case, a total of 5 comparisons were made. This results in a time complexity of **O(nlogn)** since the height of a binary tree is **logn**.
+  One thing to note here is that a comparison is done each time an element is added. The number of comparisons also depends on the height of the tree. In the above case, a total of 5 comparisons were made. This results in a time complexity of **O(nlogn)** since the height of a binary tree is **logn**.
 
-    But we can reduce the number of comparisons by using a method called **heapify** where elements are first added into the tree and then arranged in a bottom-up fashion. It helps in reducing the number of comparisons, and thus the time complexity of the overall algorithm.
+  But we can reduce the number of comparisons by using a method called **heapify** where elements are first added into the tree and then arranged in a bottom-up fashion. It helps in reducing the number of comparisons, and thus the time complexity of the overall algorithm.
 
-    So, let us understand how to **heapify** a binary tree.
+So, let us understand how to **heapify** a binary tree.
 
-    ## How to Heapify a Binary Tree?
-    **Heapify** is the process of rearranging the elements to form a tree that maintains the properties of the heap data structure.
+## How to Heapify a Binary Tree?
+**Heapify** is the process of rearranging the elements to form a tree that maintains the properties of the heap data structure.
   
-    Recall the list/array that had the elements – 10, 8, 5, 15, 6 in it. To heapify these elements, and form a max-heap, let us follow the under-given steps –
+Recall the list/array that had the elements – 10, 8, 5, 15, 6 in it. To heapify these elements, and form a max-heap, let us follow the under-given steps –
   
-    - Visualize all the elements of the list as a complete binary tree
+- Visualize all the elements of the list as a complete binary tree
   
-      Treat the elements of the given array as the nodes of a tree. To visualize an array as a binary tree, refer to the part where we have discussed the array representation of the binary tree.
-      <p align="center">
-        <img src="max-heapify-step-1.jpg">
-        <br/>
-      </p>
+  Treat the elements of the given array as the nodes of a tree. To visualize an array as a binary tree, refer to the part where we have discussed the array representation of the binary tree.
+  <p align="center">
+    <img src="max-heapify-step-1.jpg">
+    <br/>
+  </p>
   
-      Notice how the above-given binary tree is a complete binary tree but does not satisfy the properties of a max-heap since element 8 has an element greater than itself as its child.
+  Notice how the above-given binary tree is a complete binary tree but does not satisfy the properties of a max-heap since element 8 has an element greater than itself as its child.
   
-    - Start from comparing the values of children nodes with that of the parent. If the value of the parent is smaller than the values of the children, swap it. Swapping is done with a larger of two children. This process is repeated until every node satisfy the properties of a max-heap –
+- Start from comparing the values of children nodes with that of the parent. If the value of the parent is smaller than the values of the children, swap it. Swapping is done with a larger of two children. This process is repeated until every node satisfy the properties of a max-heap –
   
-      Here, we start comparing 8 with 15 and 6. Now, since 15 is greater than 8, we will swap their positions.
+  Here, we start comparing 8 with 15 and 6. Now, since 15 is greater than 8, we will swap their positions.
 
-      <p align="center">
-        <img src="max-heapify-step-2.jpg">
-        <br/>
-      </p>
+  <p align="center">
+    <img src="max-heapify-step-2.jpg">
+    <br/>
+  </p>
   
-      Again, the property of max-heap is not satisfied since 15 is greater than 10. Therefore, we will once again perform the above step.
+  Again, the property of max-heap is not satisfied since 15 is greater than 10. Therefore, we will once again perform the above step.
   
-      Now that we have obtained a max-heap, we can stop this step.
+  Now that we have obtained a max-heap, we can stop this step.
 
-      <p align="center">
-        <img src="max-heapify-step-3.jpg">
-        <br/>
-      </p>
+  <p align="center">
+    <img src="max-heapify-step-3.jpg">
+    <br/>
+  </p>
   
-      One interesting thing to note here is that a node can be heapified iff all the children nodes are already heapified. This is the reason why we start from the bottom-most sub-tree.
+  One interesting thing to note here is that a node can be heapified iff all the children nodes are already heapified. This is the reason why we start from the bottom-most sub-tree.
   
-      This step is also performed using recursion. We create a function called heapify() that works by dividing the tree into smaller sub-trees and then comparing the values of parents with that of children in each sub-tree.
+  This step is also performed using recursion. We create a function called heapify() that works by dividing the tree into smaller sub-trees and then comparing the values of parents with that of children in each sub-tree.
   
-      Notice that the number of comparisons are reduced slightly. This way, we can significantly reduce the comparisons if there are many elements to be added.
+  Notice that the number of comparisons are reduced slightly. This way, we can significantly reduce the comparisons if there are many elements to be added.
   
-      Here, the time complexity would be equal to the height of tree O(logn). This is because a node will be compared only to its parent, and thus, will be swapped at most O(logn) times.
-    
+  Here, the time complexity would be equal to the height of tree O(logn). This is because a node will be compared only to its parent, and thus, will be swapped at most O(logn) times.
